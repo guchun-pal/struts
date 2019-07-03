@@ -17,10 +17,14 @@
 */
 package org.superbiz.struts;
 
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.util.Properties;
 
+@Component
 public class AddUser {
 
     private int id;
@@ -60,6 +64,7 @@ public class AddUser {
         this.id = id;
     }
 
+    @Transactional
     public String execute() {
 
         try {
